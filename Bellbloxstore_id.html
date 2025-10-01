@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BellbloxStore - Top Up Robux Termurah</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #e8f5e9, #d1f0d3);
+      min-height: 100vh;
+      padding: 16px;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .site-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 20px;
+      margin-bottom: 40px;
+    }
+
+    .site-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      object-fit: cover;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .site-title {
+      font-size: 1.6rem;
+      background: linear-gradient(90deg, #375534, #6B9071);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-weight: 800;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+
+    .steps-title {
+      color: #555;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 24px;
+      text-align: center;
+      padding-bottom: 12px;
+      border-bottom: 2px solid rgba(55, 85, 52, 0.2);
+    }
+
+    .main-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .steps {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .step-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .step-number {
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(90deg, #375534, #6B9071);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 0.85rem;
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+
+    .step-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .step-desc {
+      color: #666;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .form-card {
+      flex: 1;
+      min-width: 300px;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .price-display {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 24px;
+    }
+
+    .price-main {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .stat-value {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #375534;
+      line-height: 1;
+    }
+
+    .per-robux {
+      font-size: 1rem;
+      color: #777;
+      margin-bottom: 2px;
+    }
+
+    .price-label {
+      font-size: 0.8rem;
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+      color: #444;
+      font-weight: 600;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.7);
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.3s;
+    }
+
+    input:focus {
+      border-color: #375534;
+      box-shadow: 0 0 0 3px rgba(55, 85, 52, 0.2);
+    }
+
+    .summary {
+      background: rgba(245, 245, 245, 0.5);
+      padding: 14px;
+      border-radius: 12px;
+      margin: 18px 0;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+    }
+
+    .summary-total {
+      font-weight: bold;
+      font-size: 1.05rem;
+      margin-top: 8px;
+      padding-top: 10px;
+      border-top: 1px solid #ddd;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(90deg, #375534, #6B9071);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.05rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    .note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #777;
+      margin-top: 14px;
+    }
+
+    /* Footer */
+    .footer {
+      background: linear-gradient(90deg, #375534, #6B9071);
+      color: white;
+      padding: 32px 0 16px;
+      margin-top: 40px;
+      width: 100%;
+      margin-left: calc(-50vw + 50%);
+      margin-right: calc(-50vw + 50%);
+      width: 100vw;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      padding: 0 16px;
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    .footer-column h3 {
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+      position: relative;
+    }
+
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 32px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .social-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: transform 0.3s;
+      color: white !important;
+      text-decoration: none !important;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.1);
+      background: rgba(255, 255, 255, 0.3);
+      color: white !important;
+      text-decoration: none !important;
+    }
+
+    .disclaimer {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 16px;
+      border-radius: 10px;
+      margin-top: 16px;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Success Page */
+    .success-page {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      position: relative;
+      z-index: 2;
+    }
+
+    .success-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 32px;
+      text-align: center;
+      max-width: 480px;
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+
+    .check-icon {
+      width: 72px;
+      height: 72px;
+      background: linear-gradient(90deg, #375534, #6B9071);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+
+    .check-icon i {
+      color: white;
+      font-size: 2.2rem;
+    }
+
+    .success-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #333;
+      margin-bottom: 12px;
+    }
+
+    .success-desc {
+      color: #666;
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+
+    .whatsapp-note {
+      background: #e8f5e9;
+      padding: 16px;
+      border-radius: 12px;
+      margin-top: 16px;
+      font-size: 0.9rem;
+      color: #375534;
+      border-left: 4px solid #375534;
+    }
+
+    .spinner {
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-top: 2px solid white;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      display: inline-block;
+      margin-right: 6px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @media (max-width: 768px) {
+      .site-header {
+        margin-top: 16px;
+        margin-bottom: 32px;
+      }
+      .site-logo { width: 36px; height: 36px; }
+      .site-title { font-size: 1.4rem; }
+      .steps-title { font-size: 1.2rem; }
+      .stat-value { font-size: 1.5rem; }
+      .main-content { gap: 20px; }
+      .form-card, .steps { min-width: 100%; }
+    }
+
+    @media (max-width: 480px) {
+      body { padding: 12px; }
+      .site-title { font-size: 1.3rem; }
+      .stat-value { font-size: 1.4rem; }
+      .per-robux { font-size: 0.95rem; }
+      .btn { padding: 12px; font-size: 1rem; }
+      .footer-container { gap: 20px; padding: 0 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="main-page" class="container">
+    <div class="site-header">
+      <img 
+        src="Bellblox.png" 
+        alt="Bellblox Logo" 
+        class="site-logo"
+        onerror="this.onerror=null; this.src='https://placehold.co/100x100/375534/white?text=B';"
+      >
+      <div class="site-title">BellbloxStore</div>
+    </div>
+
+    <h2 class="steps-title">Langkah-Langkah Pemesanan</h2>
+
+    <div class="main-content">
+      <div class="steps">
+        <div class="step-card">
+          <div class="step-header">
+            <div class="step-number">01</div>
+            <div class="step-title">Isi Username</div>
+          </div>
+          <p class="step-desc">Masukkan username Roblox kamu dengan benar</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-header">
+            <div class="step-number">02</div>
+            <div class="step-title">Masukan jumlah</div>
+          </div>
+          <p class="step-desc">Masukan jumlah yang ingin kamu beli, Klik Order dan ikuti panduan yang diberikan.</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-header">
+            <div class="step-number">03</div>
+            <div class="step-title">Pesanan Berhasil</div>
+          </div>
+          <p class="step-desc">Pesanan kamu berhasil dikirim! Tunggu admin membalas melalui WhatsApp untuk konfirmasi pesanan.</p>
+        </div>
+      </div>
+
+      <div class="form-card">
+        <div class="price-display">
+          <div class="price-main">
+            <div class="stat-value">Rp 13.000</div>
+            <div class="per-robux">/100 R$</div>
+          </div>
+          <div class="price-label">Price</div>
+        </div>
+
+        <form id="purchase-form">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" placeholder="Masukkan username Roblox kamu" required />
+          </div>
+
+          <div class="form-group">
+            <label for="amount">Jumlah R$:</label>
+            <input type="number" id="amount" min="25" placeholder="Minimal 25 R$" required />
+            <p style="font-size: 0.75rem; color: #777; margin-top: 6px;">Minimum Purchase: 25 R$</p>
+          </div>
+
+          <div class="form-group">
+            <label for="coupon">Discount Coupon:</label>
+            <input type="text" id="coupon" placeholder="Masukkan kode kupon (opsional)" />
+          </div>
+
+          <div class="form-group">
+            <label for="whatsapp">Nomor WhatsApp:</label>
+            <input type="text" id="whatsapp" placeholder="Contoh: 081234567890" required />
+            <p style="font-size: 0.75rem; color: #777; margin-top: 6px;">Pastikan nomor aktif untuk konfirmasi pesanan</p>
+          </div>
+
+          <div class="summary">
+            <div class="summary-row">
+              <span>Harga Dasar:</span>
+              <span id="base-price">Rp 0</span>
+            </div>
+            <div class="summary-row">
+              <span>Biaya Admin:</span>
+              <span id="admin-fee">Rp 0</span>
+            </div>
+            <div class="summary-row">
+              <span>Discount:</span>
+              <span>Rp 0</span>
+            </div>
+            <div class="summary-row summary-total">
+              <span>Total:</span>
+              <span id="total-display">Rp 0</span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn" id="submit-btn">
+            <i class="fas fa-paper-plane"></i> Beli Sekarang
+          </button>
+
+          <p class="note">Kamu akan dibawa ke website lain untuk petunjuk menyelesaikan pembayaran.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="success-page" class="success-page">
+    <div class="success-card">
+      <div class="check-icon">
+        <i class="fas fa-check"></i>
+      </div>
+      <h2 class="success-title">Pesanan Berhasil!</h2>
+      <p class="success-desc">Terima kasih telah melakukan pemesanan.</p>
+
+      <div class="whatsapp-note">
+        <p><strong>Tunggu admin membalas melalui WhatsApp</strong></p>
+        <p style="margin-top: 8px;">Admin akan segera menghubungi Anda untuk konfirmasi pembayaran dan pengiriman Robux.</p>
+      </div>
+
+      <button class="btn" onclick="location.reload()" style="margin-top: 20px;">
+        Beli Lagi
+      </button>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>BellbloxStore</h3>
+        <div class="disclaimer">
+          BellbloxStore adalah tempat top up Robux terpercaya dengan harga termurah dan pelayanan terbaik. Kami menjamin keamanan transaksi dan kecepatan pengiriman Robux ke akun Anda. Sudah dipercaya oleh ribuan pelanggan di seluruh Indonesia!
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h3>Wilayah & Bahasa</h3>
+        <div style="background: rgba(255,255,255,0.2); padding: 6px 10px; border-radius: 5px; display: inline-flex; align-items: center; gap: 6px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia.svg" alt="Indonesia" style="width: 18px; height: 14px;">
+          Indonesia
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h3>Hubungi Kami</h3>
+        <div class="social-icons">
+          <!-- ✅ LINK WHATSAPP DIPERBARUI -->
+          <a href="https://wa.me/6285190070508" target="_blank" class="social-icon">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h3>Ikuti Kami</h3>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/bellbloxstore_id?igsh=MTVkaHp5c21lN280bg==" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      ©2025 BellbloxStore • Semua Hak Dilindungi
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('amount').addEventListener('input', function() {
+      const amount = parseInt(this.value) || 0;
+      if (amount < 25) {
+        document.getElementById('base-price').textContent = 'Rp 0';
+        document.getElementById('admin-fee').textContent = 'Rp 0';
+        document.getElementById('total-display').textContent = 'Rp 0';
+        return;
+      }
+
+      const basePrice = amount * 130;
+      const adminFee = Math.ceil(amount / 100) * 150;
+      const total = basePrice + adminFee;
+
+      document.getElementById('base-price').textContent = 'Rp ' + basePrice.toLocaleString();
+      document.getElementById('admin-fee').textContent = 'Rp ' + adminFee.toLocaleString();
+      document.getElementById('total-display').textContent = 'Rp ' + total.toLocaleString();
+    });
+
+    document.getElementById('purchase-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const username = document.getElementById('username').value;
+      const whatsapp = document.getElementById('whatsapp').value;
+      const amount = document.getElementById('amount').value;
+      const coupon = document.getElementById('coupon').value;
+
+      const basePrice = amount * 130;
+      const adminFee = Math.ceil(amount / 100) * 150;
+      const total = basePrice + adminFee;
+
+      const webhookUrl = 'https://discord.com/api/webhooks/1381512004715679835/LD4A5if3ZnQzku7OdUyDdXwFpO66WgLl4PoyzlSDI72y3XiAaXk6sOfT1UB8cVeHJusi';
+
+      const payload = {
+        content: "@everyone 🔔 **NEW ORDER ALERT!** 🔔\n\nHai team! Ada customer baru nih yang mau top up Robux! 🎉\nJangan lupa cek dan proses ya! 💚",
+        embeds: [{
+          title: "✨ Pesanan Baru - BellbloxStore ✨",
+          color: 0x375534,
+          description: "Customer baru ingin top up Robux! 🥳",
+          fields: [
+            { name: "👤 Username", value: username, inline: true },
+            { name: "📱 WhatsApp", value: whatsapp, inline: true },
+            { name: "💰 Jumlah R$", value: amount, inline: true },
+            { name: "🎟️ Kupon Diskon", value: coupon || "Tidak ada", inline: true },
+            { name: "💸 Harga Dasar", value: `Rp ${basePrice.toLocaleString()}`, inline: true },
+            { name: "🧾 Biaya Admin", value: `Rp ${adminFee.toLocaleString()}`, inline: true },
+            { name: "✅ Total Bayar", value: `Rp ${total.toLocaleString()}`, inline: true }
+          ],
+          timestamp: new Date().toISOString(),
+          footer: { 
+            text: "BellbloxStore - Top Up Robux Termurah 💚", 
+            icon_url: "https://cdn-icons-png.flaticon.com/512/733/733585.png"
+          }
+        }]
+      };
+
+      const submitBtn = document.getElementById('submit-btn');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<span class="spinner"></span> Memproses...';
+      submitBtn.disabled = true;
+
+      try {
+        const response = await fetch(webhookUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (response.ok) {
+          document.getElementById('main-page').style.display = 'none';
+          document.getElementById('success-page').style.display = 'flex';
+        } else {
+          alert('Gagal mengirim pesanan. Silakan coba lagi.');
+        }
+      } catch (error) {
+        alert('Terjadi kesalahan saat mengirim pesanan. Periksa koneksi internet Anda.');
+      } finally {
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
